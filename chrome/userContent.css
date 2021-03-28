@@ -1,0 +1,120 @@
+@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
+  .click-target-container *,
+  .top-sites-list * {
+    color: #fff !important ;
+    text-shadow: 2px 2px 2px #222 !important ;
+  }
+
+  body::before {
+    content: "";
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent no-repeat url(img/background.jpg) center;
+    background-size: cover;
+    opacity: 0;
+    animation: splashscreen 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform-origin: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    opacity: 0.5;
+  }
+
+  .tile,
+  .top-site-icon,
+  .screenshot.active {
+    border-radius: 20px !important;
+  }
+  .search-wrapper input {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none !important;
+    border-radius: 20px !important;
+    outline: none !important;
+  }
+  .search-wrapper .search-inner-wrapper:active input,
+  .search-wrapper input:focus {
+    box-shadow: 0 10px 50px 0 black !important;
+  }
+
+  .card-outer {
+    border-radius: 20px !important;
+  }
+
+  .card-preview-image-outer {
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+  }
+
+  .card-outer .card {
+    overflow: hidden !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .fixed-search .search-wrapper {
+    background-color: transparent!important;
+    backdrop-filter: blur(40px);
+  }
+
+  .contentSearchSuggestionTable{
+    border-radius: 15px;
+  }
+
+  .search-wrapper {
+    opacity: 0;
+    animation: content 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .non-collapsible-section {
+    position: relative;
+    z-index: 99;
+  }
+
+  .search-inner-wrapper {
+    transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .body-wrapper.on {
+    opacity: 0;
+    animation: line 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes splashscreen {
+    0% {
+      transform: scale(2);
+    }
+
+    100% {
+      transform: scale(1.3);
+    }
+  }
+
+  @keyframes content {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) translateY(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0px);
+    }
+  }
+
+  @keyframes line {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+@-moz-document url(about:preferences*){
+}
