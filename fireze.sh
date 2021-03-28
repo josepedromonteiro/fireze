@@ -39,7 +39,7 @@ printf "\n${DIM}Profile folder: ${UNDERLINE}${PROFILE_FILE}${NC}\n\n"
 mkdir -p "${PROFILE_FILE}/chrome"
 cp -a ./chrome/. "${PROFILE_FILE}/chrome"
 echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >> "${PROFILE_FILE}/prefs.js"
-echo 'user_pref(" layout.css.backdrop-filter.enabled", true);' >> "${PROFILE_FILE}/prefs.js"
+echo 'user_pref("layout.css.backdrop-filter.enabled", true);' >> "${PROFILE_FILE}/prefs.js"
 printf "💅 ${COLOR_YELLOW} Fireze ${COLOR_GREEN} successfully ${COLOR_CYAN} installed! ${NC} 💅\n\n"
 printf "🦊 ${COLOR_PURPLE}Firefox${NC} needs to be resarted, do you want to do it now?\n"
 select yn in "Yes" "No"; do
